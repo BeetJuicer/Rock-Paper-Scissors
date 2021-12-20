@@ -32,11 +32,16 @@ function playGame(){
     let playerChoice = playerAnswer.toLowerCase();
     let computerChoice = computerPlay();
     let comparison = (`${computerChoice} and ${playerChoice}`);
-    if (comparison === "paper and scissors"){
-        alert("ayo, this works!");
+    if (comparison === "paper and scissors" || comparison === "rock and paper" || comparison === "scissors and rock"){
+        return(`${comparison}. You win.`);
+    }else if (comparison === "scissors and paper" || comparison === "paper and rock" || comparison === "rock and scissors"){
+        return(`${comparison}. You lose`);
+    }else if (computerChoice === playerChoice){
+        return(`${comparison}. It's a draw`);
     }else{
-        alert("Bruh, you stupid");
+        return("Error");
     }
+
 }
 
 /*
