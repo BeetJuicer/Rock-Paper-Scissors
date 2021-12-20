@@ -4,6 +4,9 @@ make a variable for the choice;
 gets a random number from 1 to 3;
 outputs rock if 1, paper if 2, scissors if 3;*/
 
+let win = 0;
+let loss = 0;
+
 function computerPlay(){
     let computerChoice = Math.floor(Math.random() * 3) + 1;    
     if (computerChoice === 1) {
@@ -36,15 +39,16 @@ function playGame(){
     let resultDraw = `${comparison}. It's a draw.`;
     let resultLose = `${comparison}. You lose.`;
     if (comparison === "paper and scissors" || comparison === "rock and paper" || comparison === "scissors and rock"){
+        win = win + 1;
         return resultWin ;
     }else if (comparison === "scissors and paper" || comparison === "paper and rock" || comparison === "rock and scissors"){
+        loss = loss + 1;
         return resultLose;
     }else if (computerChoice === playerChoice){
         return resultDraw;
     }else{
         return("Error");
     }
-
 }
 
 /*
@@ -53,14 +57,33 @@ uses the previous function to play 5 rounds;
 report a loser or a winner;
 use console.log to display the results of each round;
 count the score;
+
+make a variable for wins and losses;
+take the result of the playGame function;
+if its' a win, add 1 to the win variable;
+if it's a loss, add 1 to the win variable;
+ignore the draws;
+says if you won or lost;
 */
 
-function game(){
-    let score;
-    console.log(playGame());
-    console.log(playGame());
-    console.log(playGame());
-    console.log(playGame());   
-    console.log(playGame());    
 
+
+function game(){
+
+    console.log( win );
+    console.log( loss );
+
+    console.log( playGame() ) ;
+    console.log( playGame() ) ;
+    console.log( playGame() ) ;
+    console.log( playGame() ) ;
+    console.log( playGame() ) ;
+
+   if (win < loss){
+      console.log( `Your score is ${win}. You lose.`);
+   }else if (win > loss){
+    console.log( `Your score is ${loss}. You lose.`);
+   }else{
+       console.log("It's a draw.");
+   }
 }
