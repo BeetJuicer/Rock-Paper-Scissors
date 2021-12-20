@@ -28,10 +28,15 @@ output the result, lose,win, or draw;
 return, not console.log*/
 
 function playGame(){
-    let playerAnswer = prompt("Rock, Paper, or Scissors?");
+    let playerAnswer = prompt("Rock, Paper, or Scissors?"); 
     let playerChoice = playerAnswer.toLowerCase();
     let computerChoice = computerPlay();
     let comparison = (`${computerChoice} and ${playerChoice}`);
+
+    if (playerChoice != "rock" || playerChoice !=  "paper" || playerChoice !=  "scissors"){ 
+        playerAnswer = prompt("You did not answer properly. Rock, Paper, or Scissors?");
+    }
+
     if (comparison === "paper and scissors" || comparison === "rock and paper" || comparison === "scissors and rock"){
         return(`${comparison}. You win.`);
     }else if (comparison === "scissors and paper" || comparison === "paper and rock" || comparison === "rock and scissors"){
