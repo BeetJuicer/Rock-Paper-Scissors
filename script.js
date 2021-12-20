@@ -39,10 +39,10 @@ function playGame(){
     let resultDraw = `${comparison}. It's a draw.`;
     let resultLose = `${comparison}. You lose.`;
     if (comparison === "paper and scissors" || comparison === "rock and paper" || comparison === "scissors and rock"){
-        win = win + 1;
+        win += 1;
         return resultWin ;
     }else if (comparison === "scissors and paper" || comparison === "paper and rock" || comparison === "rock and scissors"){
-        loss = loss + 1;
+        loss += 1;
         return resultLose;
     }else if (computerChoice === playerChoice){
         return resultDraw;
@@ -69,10 +69,8 @@ says if you won or lost;
 
 
 function game(){
-
-    console.log( win );
-    console.log( loss );
-
+  win = 0;
+  loss = 0;
     console.log( playGame() ) ;
     console.log( playGame() ) ;
     console.log( playGame() ) ;
@@ -82,7 +80,7 @@ function game(){
    if (win < loss){
       console.log( `Your score is ${win}. You lose.`);
    }else if (win > loss){
-    console.log( `Your score is ${loss}. You lose.`);
+    console.log( `Your score is ${win}. You win.`);
    }else{
        console.log("It's a draw.");
    }
