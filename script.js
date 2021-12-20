@@ -31,7 +31,12 @@ function playGame(){
     let playerAnswer = prompt("Rock, Paper, or Scissors?");
     let playerChoice = playerAnswer.toLowerCase();
     let computerChoice = computerPlay();
-    console.log(`${computerChoice} and ${playerChoice}`)
+    let comparison = (`${computerChoice} and ${playerChoice}`);
+    if (comparison === "paper and scissors"){
+        alert("ayo, this works!");
+    }else{
+        alert("Bruh, you stupid");
+    }
 }
 
 /*
