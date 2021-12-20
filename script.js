@@ -31,14 +31,16 @@ function playGame(){
     let playerAnswer = prompt("Rock, Paper, or Scissors?"); 
     let playerChoice = playerAnswer.toLowerCase();
     let computerChoice = computerPlay();
-    let comparison = (`${computerChoice} and ${playerChoice}`);
-
+    let comparison = `${computerChoice} and ${playerChoice}`;
+    let resultWin = `${comparison}. You win.`;
+    let resultDraw = `${comparison}. It's a draw.`;
+    let resultLose = `${comparison}. You lose.`;
     if (comparison === "paper and scissors" || comparison === "rock and paper" || comparison === "scissors and rock"){
-        return(`${comparison}. You win.`);
+        return resultWin ;
     }else if (comparison === "scissors and paper" || comparison === "paper and rock" || comparison === "rock and scissors"){
-        return(`${comparison}. You lose`);
+        return resultLose;
     }else if (computerChoice === playerChoice){
-        return(`${comparison}. It's a draw`);
+        return resultDraw;
     }else{
         return("Error");
     }
@@ -50,17 +52,15 @@ Make a function that:
 uses the previous function to play 5 rounds;
 report a loser or a winner;
 use console.log to display the results of each round;
+count the score;
 */
 
 function game(){
-    playGame();
-    console.log(playGame);
-    playGame();
-    console.log(playGame);
-    playGame();
-    console.log(playGame);
-    playGame();
-    console.log(playGame);
-    playGame();
-    console.log(playGame);
+    let score;
+    console.log(playGame());
+    console.log(playGame());
+    console.log(playGame());
+    console.log(playGame());   
+    console.log(playGame());    
+
 }
